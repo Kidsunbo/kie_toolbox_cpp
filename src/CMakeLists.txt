@@ -24,3 +24,12 @@ if(WITH_SERDE_JSON)
     message(STATUS "WITH_SERDE_JSON is enabled, serde_json will be installed")
     install(DIRECTORY ${CMAKE_SOURCE_DIR}/include/serde_json DESTINATION include/kie) # Copy folder serde_json to include/kie
 endif()
+
+
+# with_container is True
+if(WITH_CONTAINER)
+    find_package(Boost REQUIRED)
+    target_link_libraries(kie_toolbox INTERFACE boost::boost)
+    message(STATUS "WITH_CONTAINER is enabled, container will be installed")
+    install(DIRECTORY ${CMAKE_SOURCE_DIR}/include/container DESTINATION include/kie) # Copy folder container to include/kie
+endif()

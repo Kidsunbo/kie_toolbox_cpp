@@ -9,3 +9,7 @@ endif()
 if(WITH_SERDE_JSON)
     add_subdirectory(serde_json)
 endif()
+
+if(WITH_CONTAINER)
+    add_subdirectory(container)
+endif()

@@ -11,7 +11,9 @@
 
 #include <boost/pfr.hpp>
 #include <nlohmann/json.hpp>
-#include <serde/field.hpp>
+
+
+#include "../serde/field.hpp"
 
 
 /** @brief the main namespace of this library

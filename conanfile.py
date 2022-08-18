@@ -22,6 +22,7 @@ class KieToolboxConan(ConanFile):
         "with_serde": [True, False],
         "with_serde_json": [True, False],
         "with_context": [True, False],
+        "with_container": [True, False]
     }
     default_options = {
         "shared": False,
@@ -30,6 +31,7 @@ class KieToolboxConan(ConanFile):
         "with_serde": False,
         "with_serde_json": False,
         "with_context": False,
+        "with_container": False
     }
 
     # Sources are located in the same place as this recipe, copy them to the recipe
@@ -50,12 +52,12 @@ class KieToolboxConan(ConanFile):
     def build_requirements(self):
         if self.options.enable_test:
             self.test_requires("gtest/cci.20210126")
-        
 
     def _configure(self, tc):
+        tc.variables["ENABLE_TEST"] = self.options.enable_test
         tc.variables["WITH_CONTEXT"] = self.options.with_context
         tc.variables["WITH_SERDE"] = self.options.with_serde
-        tc.variables["ENABLE_TEST"] = self.options.enable_test
+        tc.variables["WITH_CONTAINER"] = self.options.with_container
         if self.options.with_serde_json:
             tc.variables["WITH_SERDE"] = True
             tc.variables["WITH_SERDE_JSON"] = True
