@@ -196,6 +196,10 @@ namespace kie
      */
     void stop()
     {
+      for(auto& item : guards){
+        item.reset();
+      }
+      
       for (auto &item : all_ctx)
       {
         item->stop();
