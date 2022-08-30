@@ -190,9 +190,22 @@ namespace kie
     }
 
     /**
+     * @brief Release the context work guard.
+     *
+     * This will release all the work guards which keep the io_context running.
+     * The io_context without operation in its queue will exit.
+     */
+    void release_guard(){
+      for(auto& item : guards){
+        item.reset();
+      }
+      guards.clear();
+    }
+
+    /**
      * @brief Stop the context runtime.
      *
-     * This will stop all the io_context and continue to work gracefully.
+     * This will stop all the io_context.
      */
     void stop()
     {
