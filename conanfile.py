@@ -4,7 +4,7 @@ from conan.tools.cmake import CMakeToolchain, CMake, cmake_layout, CMakeDeps
 
 class KieToolboxConan(ConanFile):
     name = "kie_toolbox"
-    version = "0.1.2"
+    version = "0.1.0"
 
     # Optional metadata
     license = "MIT"
