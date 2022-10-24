@@ -3,6 +3,7 @@ project(kie_toolbox CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 
+
 add_library(kie_toolbox INTERFACE)
 target_include_directories(kie_toolbox INTERFACE include)
 add_subdirectory(src)

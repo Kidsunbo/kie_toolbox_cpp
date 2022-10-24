@@ -13,3 +13,7 @@ endif()
 if(WITH_CONTAINER)
     add_subdirectory(container)
 endif()
+
+if(WITH_UTILITY)
+    add_subdirectory(utility)
+endif()
