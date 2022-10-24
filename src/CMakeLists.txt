@@ -33,3 +33,10 @@ if(WITH_CONTAINER)
     message(STATUS "WITH_CONTAINER is enabled, container will be installed")
     install(DIRECTORY ${CMAKE_SOURCE_DIR}/include/container DESTINATION include/kie) # Copy folder container to include/kie
 endif()
+
+
+# with_utility is True
+if(WITH_UTILITY)
+    message(STATUS "WITH_UTILITY is enabled, utility will be installed")
+    install(DIRECTORY ${CMAKE_SOURCE_DIR}/include/utility DESTINATION include/kie) # Copy folder container to include/kie
+endif()
