@@ -34,7 +34,7 @@ jobs:
     - name: Install Dependency
       working-directory: ${{github.workspace}}/build
       
-      run: conan install .. --build=missing -pr:b=default -pr:h=default -o with_context=True -o with_serde=True -o with_serde_json=True
+      run: conan install .. --build=missing -pr:b=default -pr:h=default -o with_context=True -o with_serde=True -o with_serde_json=True -o with_utility=True
 
     - name: Configure CMake
       # Use a bash shell so we can use the same syntax for environment variable
