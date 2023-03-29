@@ -47,7 +47,7 @@ class KieToolboxConan(ConanFile):
         cmake_layout(self)
 
     def requirements(self):
-        self.requires("boost/1.79.0")
+        self.requires("boost/1.81.0")
         if self.options.with_serde_json:
             self.requires("nlohmann_json/3.11.2")
 
@@ -84,9 +84,5 @@ class KieToolboxConan(ConanFile):
         cmake = CMake(self)
         cmake.install()
 
-    def package_info(self):
-        if True:
-            # For now, this is a header only library
-            self.info.clear()
-        else:
-            self.cpp_info.libs = ["kie_toolbox"]
+    def package_id(self):
+        self.info.clear()
